@@ -1,0 +1,33 @@
+html,
+body {
+  background: hsl(210deg, 30%, 8%);
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: white;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+.container {
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: center;
+  // margin: 0 auto;
+  // max-width: 800px;
+  // padding: 0 1em;
+}
+
+/////////////////@at-root
+.component {
+  color: aqua;
+}
+
+// main color:  #cc5500;

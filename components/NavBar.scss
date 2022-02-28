@@ -1,0 +1,189 @@
+.navBar {
+  // padding-top: 10em;
+  padding: 3em;
+  display: flex;
+  justify-content: space-between;
+  ul {
+    margin: unset;
+    padding: unset;
+    list-style: none;
+  }
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.searchBox {
+  transform: translate(-10%, -10%);
+  background: #2f3640;
+  height: 50px;
+  border-radius: 40px;
+  padding: 3.5px;
+  border: 2px solid white;
+}
+
+.searchBox > .searchInput {
+  width: 240px;
+  padding: 0 6px;
+}
+
+.searchBox > .searchButton {
+  background: white;
+  color: #565758;
+}
+
+.searchButton {
+  color: rgb(115, 116, 117);
+  float: right;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #2f3640;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+}
+
+.searchInput {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: white;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 40px;
+  width: 0px;
+}
+
+@media screen and (max-width: 620px) {
+  .searchBox:hover > .searchInput {
+    width: 150px;
+    padding: 0 6px;
+  }
+}
+.left-navbar {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 3em;
+  gap: 2em;
+}
+.right-navbar {
+  display: flex;
+  padding-right: 3em;
+  gap: 12px;
+}
+///logo
+
+/* Style the rainbow text element. */
+.rainbow-text {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 800;
+  font-size: 2em;
+  /* Create a conic gradient. */
+  /* Double percentages to avoid blur (#000 10%, #fff 10%, #fff 20%, ...). */
+  background: #ca4246;
+  background-color: #ca4246;
+  background: conic-gradient(
+    #ca4246 16.666%,
+    #e16541 16.666%,
+    #e16541 33.333%,
+    #f18f43 33.333%,
+    #f18f43 50%,
+    #8b9862 50%,
+    #8b9862 66.666%,
+    #476098 66.666%,
+    #476098 83.333%,
+    #a7489b 83.333%
+  );
+
+  /* Set thee background size and repeat properties. */
+  background-size: 57%;
+  background-repeat: repeat;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Animate the text when loading the element. */
+  /* This animates it on page load and when hovering out. */
+  animation: rainbow-text-animation-rev 0.5s ease forwards;
+
+  cursor: pointer;
+}
+
+/* Add animation on hover. */
+.rainbow-text:hover {
+  animation: rainbow-text-animation 0.5s ease forwards;
+}
+
+/* Move the background and make it larger. */
+/* Animation shown when hovering over the text. */
+@keyframes rainbow-text-animation {
+  0% {
+    background-size: 57%;
+    background-position: 0 0;
+  }
+  20% {
+    background-size: 57%;
+    background-position: 0 1em;
+  }
+  100% {
+    background-size: 300%;
+    background-position: -9em 1em;
+  }
+}
+
+/* Move the background and make it smaller. */
+/* Animation shown when entering the page and after the hover animation. */
+@keyframes rainbow-text-animation-rev {
+  0% {
+    background-size: 300%;
+    background-position: -9em 1em;
+  }
+  20% {
+    background-size: 57%;
+    background-position: 0 1em;
+  }
+  100% {
+    background-size: 57%;
+    background-position: 0 0;
+  }
+}
+
+.logo {
+  transform: translate(-10%, -40%);
+}
+
+/*effect-underline*/
+a.effect-underline:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  height: 1em;
+  width: 100%;
+  border-bottom: 2px solid;
+  margin-top: 10px;
+  opacity: 0;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: scale(0, 1);
+  transform: scale(0, 1);
+  color: #16a085;
+}
+
+a.effect-underline:hover:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+//
+.icon-crown-nav {
+  font-size: 30px;
+  transform: rotate(45deg);
+  margin-bottom: 1em;
+  color: #cc5500;
+}
