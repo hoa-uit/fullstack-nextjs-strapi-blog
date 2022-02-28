@@ -2,14 +2,49 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+#SETUP BACKEND (STRAPI APP)
 
+Clone branch backend
+Or create by yourself:
 ```bash
-npm run dev
-# or
-yarn dev
+npx create-strapi-app backend
+```
+Then, run the development server:
+```
+cd backend
+yarn run develop
 ```
 
+#SETUP FRONTEND (NEXTJS-APP)
+
+Clone branch main
+Or create by yourself:
+```bash
+npx create-next-app frontend
+```
+Then, run the development server:
+```
+cd frontend
+yarn dev
+```
+#REQUIRED PLUGIN/LIBRARY
+Axios
+```
+$ npm install axios
+```
+Markdown-it
+```
+npm install markdown-it --save
+```
+Fontawesome
+```
+npm install @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome
+```
+Format date/time with moment
+```
+npm i moment
+```
+<!-- 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
@@ -31,4 +66,4 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details. -->
