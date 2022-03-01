@@ -2,7 +2,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // import the icons you need
-import { faSearch, faCrown, faAnchor } from '@fortawesome/free-solid-svg-icons';
+import { faCrown } from '@fortawesome/free-solid-svg-icons';
+import Link from 'next/link';
 
 function Footer() {
   return (
@@ -20,10 +21,18 @@ function Footer() {
         <div className="right-footer">
           <p className="contact">Contact</p>
           <div className="social">
-            <a href="/">Facebook</a>
-            <a href="/">Instagram</a>
-            <a href="/">Twiter</a>
-            <a href="/">Github</a>
+            <Link href="/">
+              <a>Facebook</a>
+            </Link>
+            <Link href="/">
+              <a>Instagram</a>
+            </Link>
+            <Link href="/">
+              <a>Twitter</a>
+            </Link>
+            <Link href="/">
+              <a>Github</a>
+            </Link>
           </div>
         </div>
       </div>

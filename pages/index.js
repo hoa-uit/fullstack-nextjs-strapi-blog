@@ -9,27 +9,31 @@ import { faHandPointDown } from '@fortawesome/free-solid-svg-icons';
 const myLoader = ({ src }) => {
   return `http://localhost:1337${src}`;
 };
+const myLoaderImgAva = ({ src }) => {
+  return `${src}`;
+};
 function Home({ posts }) {
   return (
     <>
-      {/* <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> */}
+      <div className="content">
+        <div className="content__container">
+          <p className="content__container__text">Hello</p>
 
-      <div class="content">
-        <div class="content__container">
-          <p class="content__container__text">Hello</p>
-
-          <ul class="content__container__list">
-            <li class="content__container__list__item">world !</li>
-            <li class="content__container__list__item">markintosh !</li>
-            <li class="content__container__list__item">users !</li>
-            <li class="content__container__list__item">everybody !</li>
+          <ul className="content__container__list">
+            <li className="content__container__list__item">world !</li>
+            <li className="content__container__list__item">markintosh !</li>
+            <li className="content__container__list__item">users !</li>
+            <li className="content__container__list__item">everybody !</li>
           </ul>
         </div>
       </div>
-      <div class="container">
-        <div class="avatar">
+      <div className="container">
+        <div className="avatar">
           <a href="https://https://www.facebook.com/h2ndnt">
-            <img
+            <Image
+              width={200}
+              height={200}
+              loader={myLoaderImgAva}
               src="https://i.pinimg.com/originals/9f/6f/04/9f6f04a46f99e3411cc7b021504bfc33.gif"
               alt="Skytsunami"
             />
@@ -54,7 +58,7 @@ function Home({ posts }) {
             {posts.map((post) => (
               <a
                 key={post.id}
-                class="effect-shine one-post"
+                className="effect-shine one-post"
                 href={`/posts/${post.id}`}
               >
                 <div>

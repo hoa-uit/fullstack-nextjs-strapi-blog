@@ -18,6 +18,7 @@ function Post({ posts }) {
               className="img-post"
               loader={myLoader}
               src={post.attributes.thumbnail.data.attributes.url}
+              alt="avatar-profile"
             ></Image>
             <div className="right-text">
               <h4>{post.attributes.title}</h4>
