@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHandPointDown } from '@fortawesome/free-solid-svg-icons';
 
 const myLoader = ({ src }) => {
-  return `http://localhost:1337${src}`;
+  return `https://markintosh.herokuapp.com/${src}`;
 };
 const myLoaderImgAva = ({ src }) => {
   return `${src}`;
@@ -110,7 +110,7 @@ function Home({ posts }) {
 }
 Home.getInitialProps = async (ctx) => {
   try {
-    const res = await axios.get('http://localhost:1337/api/posts');
+    const res = await axios.get('https://markintosh.herokuapp.com/api/posts');
     let posts = res.data;
     posts = posts.data;
     return { posts };

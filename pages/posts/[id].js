@@ -5,7 +5,6 @@ function PostPage({ post }) {
   const htmlContent = md.render(post.attributes.content);
   return (
     <article>
-      {console.log(post)}
       <header>
         <h1>{post.attributes.title}</h1>
       </header>
@@ -18,7 +17,7 @@ export default PostPage;
 
 export async function getStaticProps({ params }) {
   const postsRes = await axios.get(
-    `http://localhost:1337/api/posts/${params.id}`
+    `https://markintosh.herokuapp.com/api/posts/${params.id}`
   );
   let post = postsRes.data;
 
@@ -31,7 +30,7 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   let postsRes = await axios.get(
-    'http://localhost:1337/api/posts?populate=thumbnail'
+    'https://markintosh.herokuapp.com/api/posts?populate=thumbnail'
   );
   postsRes = postsRes.data;
   const paths = postsRes.data.map((post) => {
