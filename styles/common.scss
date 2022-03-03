@@ -3,26 +3,16 @@ body {
   background: hsl(210deg, 30%, 8%);
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font: bold 14px/1.4 'Open Sans', arial, sans-serif;
+  // font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  //   Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   color: white;
+  min-width: fit-content;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-.container {
-  //   display: flex;
-  //   flex-direction: column;
-  //   align-items: center;
-  // margin: 0 auto;
-  // max-width: 800px;
-  // padding: 0 1em;
 }
 
 /////////////////@at-root

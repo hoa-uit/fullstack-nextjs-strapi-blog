@@ -8,7 +8,6 @@ function Post({ posts }) {
   return (
     <>
       <h1>All Blogs</h1>
-
       <div className="all-posts">
         {posts.map((post) => (
           <a key={post.id} className="single-post" href={`/posts/${post.id}`}>

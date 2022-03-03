@@ -1,20 +1,20 @@
 .content {
   position: absolute;
-  top: 50%;
-  left: 60%;
-  transform: translate(-50%, -50%);
-  height: 160px;
+  top: 40%;
+  left: 42%;
+  // transform: translate(-50%, -50%);
+  // height: 100px;
   overflow: hidden;
 
   font-family: 'Lato', sans-serif;
-  font-size: 35px;
-  line-height: 40px;
+  font-size: 30px;
+  line-height: 40px; //kích thước hello
   color: #ecf0f1;
 
   &__container {
     font-weight: 600;
     overflow: hidden;
-    height: 40px;
+    height: 48px; // kích thước tất cả
     padding: 0 40px;
 
     &:before {
@@ -56,7 +56,7 @@
       padding-left: 110px;
       text-align: left;
       list-style: none;
-
+      // color: #cc5500;
       -webkit-animation-name: change;
       -webkit-animation-duration: 10s;
       -webkit-animation-iteration-count: infinite;
@@ -65,7 +65,7 @@
       animation-iteration-count: infinite;
 
       &__item {
-        line-height: 40px;
+        line-height: 40px; // khoảng cách chữ chạy
         margin: 0;
       }
     }
@@ -225,24 +225,6 @@
 }
 
 // 6 is the number of animation.
-// Here, there are 4 lines :
-
-// 1 to 2
-// 2 to 3
-// 3 to 4
-// 4 to 3
-// 3 to 2
-// 2 to 1
-
-// 6x + 6y = 100 (100% duration)
-
-// HERE :
-// y = 4 -> Animation between two lines
-// x = 12.66 -> Time spent on a line
-
-// You can define a value and calculate the other if you want change speed or the number of lines
-
-////////////////////////@at-root
 
 @keyframes float {
   0% {
@@ -261,13 +243,17 @@
 
 .container {
   position: absolute;
-  top: 30%;
-  left: 30%;
+  top: 35%;
+  left: 27%;
+}
+
+.introduction {
+  margin-top: 5em;
 }
 
 .avatar {
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   box-sizing: border-box;
   border: 5px white solid;
   border-radius: 50%;
@@ -282,86 +268,132 @@
 }
 
 .wrap {
-  max-width: 85%;
-  padding: 1em;
-  margin-top: 12em;
-  margin-left: 7em;
-}
-.description {
-  text-align: center;
-}
-.idiom {
-  color: #16a085;
-}
-.meaning {
-  font-weight: lighter;
-  color: #9ca8b4;
-}
-.contentHome {
-  padding: 3em 3em 3em 0;
-  display: flex;
-  justify-content: space-between;
-}
-.readmore {
-  color: #9ca8b4;
-}
-.categoryHome {
-  color: #16a085;
-}
-.relateWebsite {
-  max-width: 35%;
-  text-align: right;
-}
-.recentlyPost {
-  max-width: 65%;
-}
-// hover
-/* effect-shine */
-.effect-shine:hover {
-  -webkit-mask-image: linear-gradient(
-    -75deg,
-    rgba(0, 0, 0, 0.6) 30%,
-    #000 50%,
-    rgba(0, 0, 0, 0.6) 70%
-  );
-  -webkit-mask-size: 200%;
-  animation: shine 3s infinite;
-}
+  // max-width: 85%;
+  padding: 9em;
+  margin-top: 5em;
 
-@-webkit-keyframes shine {
-  from {
-    -webkit-mask-position: 250%;
+  font-size: small;
+  .description {
+    text-align: center;
+  }
+  .idiom {
+    color: #16a085;
+  }
+  .meaning {
+    font-weight: lighter;
+    color: #9ca8b4;
+  }
+  .contentHome {
+    padding-top: 2em;
+    display: flex;
+    justify-content: space-between;
+  }
+  .readmore {
+    color: #9ca8b4;
+  }
+  .categoryHome {
+    color: #16a085;
+  }
+  .relateWebsite {
+    max-width: 35%;
+    text-align: right;
+  }
+  .recentlyPost {
+    max-width: 65%;
+  }
+  // hover
+  /* effect-shine */
+  .effect-shine:hover {
+    -webkit-mask-image: linear-gradient(
+      -75deg,
+      rgba(0, 0, 0, 0.6) 30%,
+      #000 50%,
+      rgba(0, 0, 0, 0.6) 70%
+    );
+    -webkit-mask-size: 200%;
+    animation: shine 3s infinite;
   }
 
-  to {
-    -webkit-mask-position: -50%;
+  @-webkit-keyframes shine {
+    from {
+      -webkit-mask-position: 250%;
+    }
+
+    to {
+      -webkit-mask-position: -50%;
+    }
+  }
+  a {
+    color: #fff;
+    // font-size: 2em;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+  }
+  .team-13 {
+    width: 300px;
+    height: 200px;
+
+    background-color: #fff;
+    border-radius: 10px;
+    margin-bottom: 2em;
+  }
+  .description-home {
+    text-align: justify;
+    text-justify: inter-word;
+    max-width: 85%;
+  }
+  .name-web {
+    text-align: center;
+  }
+  .fa-handintdown-home {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    margin-left: 4px;
   }
 }
-a {
-  color: #fff;
-  // font-size: 2em;
-  text-decoration: none;
-  display: inline-block;
-  position: relative;
-}
-.team-13 {
-  width: 300px;
-  height: 300px;
+@media screen and (max-width: 480px) {
+  .html {
+    min-width: fit-content;
+  }
+  .container {
+    top: 22%;
+    left: 40%;
+  }
+  .wrap {
+    margin-top: 25em;
+    padding: 0 3em 0 3em;
+    .contentHome {
+      flex-direction: column;
+      .relateWebsite {
+        max-width: 100%;
+        text-align: left;
+      }
+      .recentlyPost {
+        max-width: 100%;
+      }
+      .team-13 {
+        width: 300px;
+        height: 200px;
 
-  background-color: #fff;
-  border-radius: 10px;
-  margin-bottom: 2em;
-}
-.description-home {
-  text-align: justify;
-  text-justify: inter-word;
-  max-width: 80%;
-}
-.name-web {
-  text-align: center;
-}
-.fa-handintdown-home {
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  margin-left: 4px;
+        background-color: #fff;
+        border-radius: 10px;
+        margin-bottom: 2em;
+      }
+      .description-home {
+        max-width: 100%;
+      }
+      .name-web {
+        text-align: left;
+      }
+    }
+  }
+  .content {
+    font-size: 27px;
+    width: fit-content;
+    left: 20%;
+  }
+  .content__container {
+    height: 40px;
+  }
 }

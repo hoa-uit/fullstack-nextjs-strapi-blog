@@ -1,8 +1,9 @@
 .wrap-footer {
   margin-top: 5em;
-  padding: 3em 9em 3em 9em;
+  padding: 1em 9em 1em 9em;
   display: flex;
   justify-content: space-between;
+  font-size: small;
 }
 .name-owner {
   font-size: xx-large;
@@ -11,7 +12,6 @@
 .thanks-text {
   font-size: 14px;
   font-weight: 500;
-
   color: hsl(0deg, 0%, 100%);
 }
 
@@ -39,4 +39,19 @@
   transform: rotate(45deg);
   margin-bottom: 1em;
   font-size: medium;
+}
+@media screen and (max-width: 480px) {
+  .wrap-footer {
+    font-size: xx-small;
+    padding: 1em 4em 1em 4em;
+  }
+  .name-owner {
+    font-size: large;
+    font-weight: bolder;
+  }
+
+  .icon-crown {
+    margin-bottom: 1em;
+    font-size: small;
+  }
 }

@@ -15,35 +15,38 @@ const myLoaderImgAva = ({ src }) => {
 function Home({ posts }) {
   return (
     <>
-      <div className="content">
-        <div className="content__container">
-          <p className="content__container__text">Hello</p>
+      <div className="introduction">
+        <div className="content">
+          <div className="content__container">
+            <p className="content__container__text">Hello</p>
 
-          <ul className="content__container__list">
-            <li className="content__container__list__item">world !</li>
-            <li className="content__container__list__item">markintosh !</li>
-            <li className="content__container__list__item">users !</li>
-            <li className="content__container__list__item">everybody !</li>
-          </ul>
+            <ul className="content__container__list">
+              <li className="content__container__list__item">world !</li>
+              <li className="content__container__list__item">markintosh !</li>
+              <li className="content__container__list__item">users !</li>
+              <li className="content__container__list__item">everybody !</li>
+            </ul>
+          </div>
+        </div>
+        <div className="container">
+          <div className="avatar">
+            <a href="https://https://www.facebook.com/h2ndnt">
+              <Image
+                width={200}
+                height={200}
+                loader={myLoaderImgAva}
+                src="https://i.pinimg.com/originals/9f/6f/04/9f6f04a46f99e3411cc7b021504bfc33.gif"
+                alt="Skytsunami"
+              />
+            </a>
+          </div>
         </div>
       </div>
-      <div className="container">
-        <div className="avatar">
-          <a href="https://https://www.facebook.com/h2ndnt">
-            <Image
-              width={200}
-              height={200}
-              loader={myLoaderImgAva}
-              src="https://i.pinimg.com/originals/9f/6f/04/9f6f04a46f99e3411cc7b021504bfc33.gif"
-              alt="Skytsunami"
-            />
-          </a>
-        </div>
-      </div>
+
       <div className="wrap">
         <h3 className="description idiom">
           {' '}
-          石の上にも三年/3 năm ngồi trên tảng đá{' '}
+          石の上にも三年 - 3 năm ngồi trên tảng đá{' '}
         </h3>
         <h3 className="description meaning">
           Điều gì xảy ra khi bạn ngồi trên một hòn đá trong 3 năm? Hòn đá đó sẽ
@@ -62,7 +65,7 @@ function Home({ posts }) {
                 href={`/posts/${post.id}`}
               >
                 <div>
-                  <h4 className="effect-underline">{post.attributes.title}</h4>
+                  <h4>{post.attributes.title}</h4>
                   <p className="description-home">
                     {post.attributes.description}
                   </p>

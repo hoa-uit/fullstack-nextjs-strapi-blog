@@ -3,7 +3,12 @@ import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 // import the icons you need
-import { faSearch, faCrown, faSun } from '@fortawesome/free-solid-svg-icons';
+import {
+  faSearch,
+  faCrown,
+  faSun,
+  faBars,
+} from '@fortawesome/free-solid-svg-icons';
 
 function NavBar() {
   return (
@@ -16,16 +21,16 @@ function NavBar() {
           </a>
           {/* <FontAwesomeIcon className="icon-crown" icon={faCrown} /> */}
         </Link>
-        <ul>
-          <li>
-            <Link href="/posts">
-              <a className="effect-underline">All posts</a>
-            </Link>
-          </li>
-        </ul>
-        <Link href="/">
-          <a className="effect-underline">Write now</a>
-        </Link>
+        <div className="effect-underline all-post-nav">
+          <Link href="/posts">
+            <a>Posts</a>
+          </Link>
+        </div>
+        <div className="effect-underline pc">
+          <Link href="/">
+            <a>Write </a>
+          </Link>
+        </div>
       </div>
 
       <div className="right-navbar">
@@ -45,6 +50,9 @@ function NavBar() {
             <FontAwesomeIcon className="icon-sun" icon={faSun} />
           </a>
         </Link>
+      </div>
+      <div className="bars">
+        <FontAwesomeIcon className="icon-bars" icon={faBars} />
       </div>
     </nav>
   );
