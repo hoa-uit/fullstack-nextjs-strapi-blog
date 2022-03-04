@@ -10,28 +10,25 @@ import '@fortawesome/fontawesome-svg-core/styles.css'; // import Font Awesome CS
 import { config } from '@fortawesome/fontawesome-svg-core';
 import Head from 'next/head';
 config.autoAddCss = false; // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
-
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      window.gtag('config', process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS, {
+        page_path: url,
+      });
+    };
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
+
   return (
     <>
-      <Script
-        strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-      />
-
-      <Script strategy="lazyOnload">
-        {`
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-        page_path: window.location.pathname,
-        });
-    `}
-      </Script>
-      <Head>
-        <title>markintosh</title>
-      </Head>
       <div className="container-app">
         <NavBar />
         <Component {...pageProps} />
