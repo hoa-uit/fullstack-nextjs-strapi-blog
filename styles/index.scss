@@ -357,11 +357,11 @@
     min-width: fit-content;
   }
   .container {
-    top: 22%;
-    left: 40%;
+    top: 27%;
+    left: 35%;
   }
   .wrap {
-    margin-top: 25em;
+    margin-top: 20em;
     padding: 0 3em 0 3em;
     .contentHome {
       flex-direction: column;
@@ -389,11 +389,15 @@
     }
   }
   .content {
-    font-size: 27px;
+    font-size: 20px;
     width: fit-content;
-    left: 20%;
+    left: 12%;
+    margin-top: 3em;
   }
   .content__container {
     height: 40px;
+  }
+  .content__container__list {
+    padding-left: 80px;
   }
 }
