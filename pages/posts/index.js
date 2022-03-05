@@ -2,7 +2,7 @@ import axios from 'axios';
 import Image from 'next/image';
 import moment from 'moment';
 const myLoader = ({ src }) => {
-  return `https://markintosh.herokuapp.com${src}`;
+  return `${src}`;
 };
 function Post({ posts }) {
   return (
