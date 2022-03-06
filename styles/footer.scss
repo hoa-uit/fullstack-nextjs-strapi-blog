@@ -19,8 +19,10 @@
   margin-top: 5em;
   color: #9ca8b4;
 }
+.right-footer {
+  margin-top: 2em;
+}
 .social {
-  margin-top: 1em;
   display: flex;
   flex-direction: column;
   color: #9ca8b4;
@@ -35,7 +37,6 @@
 }
 .icon-crown {
   color: #cc5500;
-
   transform: rotate(45deg);
   margin-bottom: 1em;
   font-size: medium;

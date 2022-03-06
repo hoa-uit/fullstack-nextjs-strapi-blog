@@ -35,8 +35,8 @@ function Home({ posts }) {
                 width={200}
                 height={200}
                 loader={myLoaderImgAva}
-                src="https://i.pinimg.com/originals/9f/6f/04/9f6f04a46f99e3411cc7b021504bfc33.gif"
-                alt="Skytsunami"
+                src="https://res.cloudinary.com/deojoci86/image/upload/v1646490461/marin-kitagawa_fm6nfq.gif"
+                alt="markintosh-avatar"
               />
             </a>
           </div>

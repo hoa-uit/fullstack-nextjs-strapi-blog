@@ -5,46 +5,64 @@ h1 {
 }
 
 .all-posts {
-}
-.single-post {
-  display: flex;
-
-  //   flex-wrap: wrap;
-  align-content: space-between;
-  padding: 0em 1em 3em 0.5em;
-  max-width: 80%;
-  margin-left: 9em;
-  text-align: justify;
-  text-justify: inter-word;
-}
-
-.right-text {
-  // display: flex;
-  // flex-direction: column;
-  padding-left: 2em;
-  p {
-    color: aliceblue;
+  display: block;
+  margin: auto; // auto centre block
+  width: 80%;
+  .single-post {
+    display: flex;
+    align-content: space-between;
+    padding: 0em 1em 3em 0.5em;
   }
-  .author {
-    color: rgb(8, 114, 100);
-    font-weight: bolder;
-    margin-top: 1em;
+
+  .right-text {
+    padding-left: 2em;
+    text-align: justify;
+    text-justify: inter-word;
+    p {
+      color: aliceblue;
+    }
+    .author {
+      color: rgb(8, 114, 100);
+      font-weight: bolder;
+      margin-top: 1em;
+    }
+    max-width: 70%;
   }
-  max-width: 70%;
+
+  .img-post {
+    border-radius: 10px;
+    max-width: 30%;
+  }
+
+  @media screen and (max-width: 480px) {
+    .single-post {
+      display: flex;
+      flex-direction: column;
+      .right-text {
+        padding-left: 0;
+        max-width: 100%;
+      }
+    }
+  }
 }
 
-.img-post {
-  border-radius: 10px;
-}
-
-/// one post css
+// one post css / dont delete
 article {
-  max-width: 80%;
-  margin-left: 9em;
+  margin: auto;
+  width: 80%;
   text-align: justify;
   text-justify: inter-word;
   img {
-    text-align: center;
-    border-radius: 10;
+    display: block;
+    margin: auto;
+    width: 50%;
+  }
+  @media screen and (max-width: 480px) {
+    img {
+      text-align: center;
+      border-radius: 10;
+      width: 100%;
+      height: auto;
+    }
   }
 }

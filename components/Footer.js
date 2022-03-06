@@ -21,16 +21,16 @@ function Footer() {
         <div className="right-footer">
           <p className="contact">Contact</p>
           <div className="social">
-            <Link href="/">
+            <Link href="https://www.facebook.com/h2ndnt">
               <a>Facebook</a>
             </Link>
-            <Link href="/">
+            <Link href="https://www.instagram.com/h2ndnt/">
               <a>Instagram</a>
             </Link>
-            <Link href="/">
+            <Link href="https://twitter.com/h2ndnt">
               <a>Twitter</a>
             </Link>
-            <Link href="/">
+            <Link href="https://github.com/hoa-uit">
               <a>Github</a>
             </Link>
           </div>
