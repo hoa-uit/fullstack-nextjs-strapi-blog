@@ -1,5 +1,4 @@
 .navBar {
-  // padding-top: 10em;
   padding: 3em;
   display: flex;
   justify-content: space-between;
@@ -204,5 +203,232 @@
     .bars {
       display: block;
     }
+    .posts-button {
+      display: none;
+    }
+  }
+
+  // sliding menu css
+  @mixin transition {
+    @for $i from 1 through 50 {
+      &:nth-child(#{$i}) {
+        transition: transform
+          1s
+          #{$i *
+          0.08}s
+          cubic-bezier(0.29, 1.4, 0.44, 0.96);
+      }
+    }
+  }
+
+  @mixin alpha-attribute($attribute, $color, $background) {
+    $percent: alpha($color) * 100%;
+    $opaque: opacify($color, 1);
+    $solid-color: mix($opaque, $background, $percent);
+    #{$attribute}: $solid-color;
+    #{$attribute}: $color;
+  }
+
+  body {
+    margin: 0;
+    overflow-x: hidden;
+    height: 100vh;
+    width: 50vw;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  $main: #1184f0;
+  $text: #fefefe;
+  $contrast: darken($main, 30%); // độ sáng tối của màu nền
+  .drawer-list {
+    // transform: translate(-50%, -50%);
+    z-index: 1000;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh; // chiều dài slide menu
+    width: 50vw;
+    transform: translate(100vw, 0);
+    /* ie workaround */
+    -ms-transform: translatex(-100vw);
+    box-sizing: border-box;
+    pointer-events: none;
+    padding-top: 125px;
+    transition: width 475ms ease-out, transform 450ms ease,
+      border-radius 0.8s 0.1s ease;
+    border-bottom-left-radius: 100vw;
+    @include alpha-attribute('background-color', rgba($contrast, 0.8), white);
+    @media (min-width: 768px) {
+      width: 30vw;
+    }
+
+    ul {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: auto;
+      overflow-x: hidden;
+      pointer-events: auto;
+    }
+    li {
+      list-style: none;
+      text-transform: uppercase;
+      pointer-events: auto;
+      white-space: nowrap;
+      box-sizing: border-box;
+      transform: translatex(100vw);
+      /* ie workaround */
+      -ms-transform: translatex(-100vw);
+      &:last-child {
+        margin-bottom: 2em;
+      }
+      a {
+        text-decoration: none;
+        color: $text;
+        text-align: center;
+        display: block;
+        padding: 1rem;
+        font-size: calc(24px - 0.5vw); // cỡ chữ các tab
+        @media (min-width: 768px) {
+          text-align: right;
+          padding: 0.5rem;
+          font-size: calc(27px - 0.5vw); // cỡ chữ các tab
+        }
+        @media screen and (max-width: 480px) {
+          font-size: calc(20px - 0.5vw); // cỡ chữ các tab
+        }
+        &:hover {
+          cursor: pointer;
+          @include alpha-attribute('background-color', rgba($main, 0.5), white);
+        }
+      }
+    }
+  }
+
+  input.hamburger {
+    display: none;
+    &:checked {
+      & ~ .drawer-list {
+        transform: translatex(0);
+        border-bottom-left-radius: 0;
+        li {
+          transform: translatex(0);
+          @include transition;
+          a {
+            padding-right: 15px;
+          }
+        }
+      }
+      & ~ label {
+        > i {
+          background-color: transparent;
+          transform: rotate(90deg);
+          &:before {
+            transform: translate(-50%, -50%) rotate(45deg);
+          }
+          &:after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+          }
+        }
+        close {
+          color: $text;
+          width: 100%;
+        }
+        open {
+          color: rgba(0, 0, 0, 0);
+          width: 0;
+        }
+      }
+    }
+  }
+
+  label.hamburger {
+    z-index: 9999;
+    position: relative;
+    display: block;
+    height: 50px;
+    width: 50px;
+    @media screen and (max-width: 480px) {
+      height: 80px;
+      width: 35px;
+      margin-right: 1em;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+    text {
+      close,
+      open {
+        text-transform: uppercase;
+        font-size: 0.8em;
+        align-text: center;
+        position: absolute;
+        transform: translateY(50px);
+        text-align: center;
+        overflow: hidden;
+        transition: width 0.25s 0.35s, color 0.45s 0.35s;
+        @media screen and (max-width: 480px) {
+          font-size: 0em;
+        }
+      }
+      close {
+        color: rgba(0, 0, 0, 0);
+        right: 0;
+        width: 0;
+      }
+      open {
+        color: $text;
+        width: 100%;
+      }
+    }
+    > i {
+      position: absolute;
+      width: 100%; // kích thước dấu x close
+      height: 2.5px;
+      top: 50%;
+      background-color: white;
+      pointer-events: auto;
+      transition-duration: 0.35s;
+      transition-delay: 0.35s;
+      &:before,
+      &:after {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 2.5px;
+        left: 50%;
+        background-color: #cc5500;
+        content: '';
+        transition: transform 0.35s;
+        transform-origin: 50% 50%;
+      }
+      &:before {
+        transform: translate(-50%, -14px);
+      }
+      &:after {
+        transform: translate(-50%, 14px);
+      }
+    }
+  }
+
+  /**
+      SCROLLBAR STYLE FOR IE
+  */
+
+  body {
+    scrollbar-base-color: rgb(19, 138, 114);
+    scrollbar-3dlight-color: #fff;
+    scrollbar-highlight-color: #1abc9c;
+    scrollbar-track-color: #fff;
+    scrollbar-arrow-color: #1abc9c;
+    scrollbar-shadow-color: #1abc9c;
+    scrollbar-dark-shadow-color: #1abc9c;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
   }
 }
