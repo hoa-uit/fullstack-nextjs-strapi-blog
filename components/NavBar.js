@@ -60,27 +60,35 @@ function NavBar() {
       hamberger button
       */}
 
-      <input id="hamburger" class="hamburger" type="checkbox" />
-      <label class="hamburger" for="hamburger">
+      <input id="hamburger" className="hamburger" type="checkbox" />
+      <label className="hamburger" htmlFor="hamburger">
         <i></i>
         <text>
           <close>close</close>
           <open>menu</open>
         </text>
       </label>
-      <section class="drawer-list">
+      <section className="drawer-list">
         <ul>
           <li>
-            <a href="/posts">All posts</a>
+            <Link href="/posts">
+              <a>All posts</a>
+            </Link>
           </li>
           <li>
-            <a href="#">Write now</a>
+            <Link href="#">
+              <a>Write now</a>
+            </Link>
           </li>
           <li>
-            <a href="#">Find</a>
+            <Link href="#">
+              <a>Find</a>
+            </Link>
           </li>
           <li>
-            <a href="#">Light mode</a>
+            <Link href="#">
+              <a>Light mode</a>
+            </Link>
           </li>
         </ul>
       </section>
