@@ -49,12 +49,12 @@ function Home({ posts }) {
           石の上にも三年 - 3 năm ngồi trên tảng đá{' '}
         </h3>
         <h3 className="description meaning">
-          "Điều gì xảy ra khi bạn ngồi trên một hòn đá trong 3 năm? Hòn đá đó sẽ
-          ấm lên. Câu tục ngữ này có nghĩa là cho dù bạn đang trải qua thời kỳ
-          khó khăn, thế nhưng nếu kiên trì, bạn cũng sẽ thay đổi được điều gì đó
-          và mọi thứ sẽ trở nên tốt hơn" một câu tục ngữ mình rất thích.
-          Markintosh's blog là một blog nơi mình chia sẻ những kiến thức và tâm
-          sự cá nhân, rảnh rỗi thì có thể dịch. bài
+          &quot;Điều gì xảy ra khi bạn ngồi trên một hòn đá trong 3 năm? Hòn đá
+          đó sẽ ấm lên. Câu tục ngữ này có nghĩa là cho dù bạn đang trải qua
+          thời kỳ khó khăn, thế nhưng nếu kiên trì, bạn cũng sẽ thay đổi được
+          điều gì đó và mọi thứ sẽ trở nên tốt hơn&quot; một câu tục ngữ mình
+          rất thích. Markintosh&apos;s blog là một blog nơi mình chia sẻ những
+          kiến thức và tâm sự cá nhân, rảnh rỗi thì có thể dịch. bài
         </h3>
 
         <div className="contentHome">
