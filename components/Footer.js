@@ -11,7 +11,8 @@ function Footer() {
       <div className="wrap-footer">
         <div className="left-footer">
           <p className="name-owner">
-            Markintosh <FontAwesomeIcon className="icon-crown" icon={faCrown} />
+            Markintosh blog{' '}
+            <FontAwesomeIcon className="icon-crown" icon={faCrown} />
           </p>
           <p className="thanks-text">Thanks for reading</p>
           <p className="lisence">
