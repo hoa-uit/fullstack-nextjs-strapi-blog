@@ -41,3 +41,5 @@ export async function getStaticPaths() {
     fallback: false,
   };
 }
+
+// why on vercel not woking?
